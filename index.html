@@ -15,14 +15,14 @@
 				Logo
 			</span>
 
-			<ul class="menu">
+			<ul id="nav-menu" class="menu">
 				<li class="menu__item"><a href="#" class="link">home</a></li>
 				<li class="menu__item"><a href="#" class="link">blog</a></li>
 				<li class="menu__item"><a href="#" class="link">support</a></li>
 				<li class="menu__item"><a href="#" class="link">purchase</a></li>
 			</ul>
 
-			<div class="menu-mobile__burger">
+			<div id="nav-top-burger" class="menu-mobile__burger">
 				<div class="burger__line"></div>
 				<div class="burger__line"></div>
 				<div class="burger__line"></div>
@@ -159,5 +159,13 @@
 	<footer>
 		Place your logo
 	</footer>
+
+	<script>
+		const btnBurger = document.getElementById('nav-top-burger');
+		const menu = document.getElementById('nav-menu');
+		btnBurger.addEventListener('click', ()=> {
+			menu.classList.toggle('toggle-mobile-nav')
+		})
+	</script>
 </body>
 </html>
