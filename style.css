@@ -79,13 +79,15 @@ h1, h2, p, ul, li, ol {
 	width: 0%;
 }
 
-.menu .menu__item:hover:hover::after{
+.menu .menu__item:hover:hover::after,
+.menu .menu__item:hover:active::after{
 	
 	animation: button-load 2s forwards
 
 }
 
-.menu .menu__item:hover:hover::before {
+.menu .menu__item:hover:hover::before,
+.menu .menu__item:hover:active::before {
 	animation: button-load-bottom 2s forwards 2s;
 }
 
@@ -135,15 +137,29 @@ h1, h2, p, ul, li, ol {
 .menu-mobile__burger .burger__line {
 	height: 5px;
 	width: 2rem;
-	
+	transition: transform 1s;
 	background-color: #1cb890;
 	margin-bottom: 5px;
 	border-radius: 3px;
 }
 
-/* .menu-mobile__burger:after {
-	
-} */
+.menu-mobile__burger:hover .burger__line:first-of-type,
+.menu-mobile__burger--toggled .burger__line:first-of-type {
+	transform: rotateZ(30deg);
+	transition: transform 1s;
+}
+
+.menu-mobile__burger:hover .burger__line:nth-of-type(2) {
+	transform: rotateZ(90deg);
+	transition: transform 1s;
+}
+
+.menu-mobile__burger--toggled .burger__line:nth-of-type(3),
+.menu-mobile__burger:hover .burger__line:nth-of-type(3) {
+	transform: rotateZ(-30deg);
+	transition: transform 1s;
+}
+
 
 .menu-mobile__burger:hover {
 	cursor: pointer;
@@ -168,13 +184,14 @@ h1, h2, p, ul, li, ol {
 		position: absolute;
 		flex-direction: column;
 		height: 80vh;
-		width: 50vw;
+		width: 80vw;
 		justify-content: flex-start;
 		transition: transform 1s ease-in;
 	}
 
 	.menu .menu__item{
 		max-width: 15rem;
+		font-size: 2rem;
 	}
 
 	.menu-mobile__burger {

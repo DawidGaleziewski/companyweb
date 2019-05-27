@@ -1,6 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Company</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i" rel="stylesheet"> 
@@ -161,10 +164,13 @@
 	</footer>
 
 	<script>
+
 		const btnBurger = document.getElementById('nav-top-burger');
-		const menu = document.getElementById('nav-menu');
 		btnBurger.addEventListener('click', ()=> {
+			
+			const menu = document.getElementById('nav-menu');
 			menu.classList.toggle('toggle-mobile-nav')
+			btnBurger.classList.toggle('menu-mobile__burger--toggled')
 		})
 	</script>
 </body>
